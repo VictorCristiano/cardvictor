@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Cristiano - Consultor Arezzo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho  -->
+        <header class="header">
+            <img src="/assets/perfil.jpeg" alt="Victor Cristiano" class="profile-image">
+            <h1 class="name">Victor Cristiano</h1>
+            <p class="title">Consultor Arezzo</p>
+            <p>Segunda a Sexta 10:00h às 18:20h</p>
+            <p>Domingo 14:00h às 20:00h</p>
+        </header>
+
+        <!-- Novidades (Carrossel) -->
+        <section class="novidades">
+            <h2>Novidades</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="novidades-carousel">
+                    <img src="/assets/img1.jpeg" alt="Novidade 1">
+                    <img src="/assets/img2.jpeg" alt="Novidade 2">
+                    <img src="/assets/img3.jpeg" alt="Novidade 3">
+                    <img src="/assets/img4.jpeg" alt="Novidade 4">
+                </div>
+                <div class="carousel-nav">
+                    <button onclick="changeSlide(-1, 'novidades')"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="changeSlide(1, 'novidades')"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redes Sociais -->
+        <section class="redes-sociais">
+            <h2>Redes Sociais</h2>
+            <a href="https://wa.me/+5584999038692" target="_blank" class="social-link">
+                <div class="social-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <span class="social-text">Me chame no WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/victor_arezzo/" target="_blank" class="social-link">
+                <div class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+                <span class="social-text">Me siga no Instagram</span>
+            </a>
+        </section>
+        
+        <p class="redes-alert">
+            Fique atento às minhas redes sociais para ficar por dentro das novidades!
+        </p>
+
+        <!-- Voucher -->
+        <section class="voucher">
+            <h2>Voucher do Site</h2>
+            <div class="voucher-code" id="voucher-text">ARZ511394</div>
+            <button class="copy-btn" onclick="copyVoucher()">Copiar Código</button>
+        </section>
+             <p class="redes-alert">
+               Esse voucher concede desconto para compras no site apenas para produtos da nova coleção. 
+               <a href="https://www.arezzo.com.br" target="_blank">Visite o site da Arezzo</a>
+            </p>
+        <!-- Depoimentos -->
+        <section class="depoimentos">
+            <h2>Depoimentos</h2>
+            <div class="carousel-container">
+                <div class="depoimento-carousel" id="depoimentos-carousel">
+                    <img src="/assets/img1.jpeg" alt="Novidade 1">
+                    <img src="/assets/img2.jpeg" alt="Novidade 2">
+                    <img src="/assets/img3.jpeg" alt="Novidade 3">
+                    <img src="/assets/img4.jpeg" alt="Novidade 4">
+                </div>
+                <div class="carousel-nav">
+                    <button onclick="changeSlide(-1, 'depoimentos')"><i class="fas fa-chevron-left"></i></button>
+                    <button onclick="changeSlide(1, 'depoimentos')"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
