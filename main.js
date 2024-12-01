@@ -1,59 +1,3 @@
-// Função para trocar slides
-function changeSlide(direction, carouselType) {
-    const carousel = document.getElementById(`${carouselType}-carousel`);
-    const images = carousel.querySelectorAll('img');
-    const imageWidth = images[0].offsetWidth;
-    const gap = parseFloat(getComputedStyle(carousel).gap);
-    const totalWidth = imageWidth + gap;
-
-    // Calcular o novo índice
-    let currentTransform = parseFloat(carousel.style.transform?.replace('translateX(', '').replace('px)', '') || 0);
-    let newTransform = currentTransform - (direction * totalWidth);
-
-    // Limitar o movimento
-    if (newTransform > 0) {
-        newTransform = -(images.length - 1) * totalWidth;
-    }
-    if (newTransform < -(images.length - 1) * totalWidth) {
-        newTransform = 0;
-    }
-
-    carousel.style.transform = `translateX(${newTransform}px)`;
-}
-
-// Carrossel de Novidades e Depoimentos
-document.addEventListener('DOMContentLoaded', () => {
-    ['novidades', 'depoimentos'].forEach(carouselType => {
-        const carousel = document.getElementById(`${carouselType}-carousel`);
-        const images = carousel.querySelectorAll('img');
-        let currentIndex = 0;
-
-        function rotateCarousel() {
-            const imageWidth = images[0].offsetWidth;
-            const gap = parseFloat(getComputedStyle(carousel).gap);
-            const totalWidth = imageWidth + gap;
-
-            currentIndex++;
-            
-            if (currentIndex >= images.length) {
-                currentIndex = 0;
-                carousel.style.transition = 'none';
-                carousel.style.transform = `translateX(0)`;
-                
-                setTimeout(() => {
-                    carousel.style.transition = 'transform 0.5s ease';
-                }, 50);
-            }
-
-            carousel.style.transform = `translateX(-${currentIndex * totalWidth}px)`;
-        }
-
-        // Iniciar rotação automática a cada 3 segundos
-        setInterval(rotateCarousel, 3000);
-    });
-});
-
-// Função para copiar voucher
 function copyVoucher() {
     const voucherText = document.getElementById('voucher-text');
     const tempTextArea = document.createElement('textarea');
@@ -63,4 +7,67 @@ function copyVoucher() {
     document.execCommand('copy');
     document.body.removeChild(tempTextArea);
     alert('Código copiado com sucesso!');
-}
+}  
+let slides = document.querySelectorAll('.slideshow');
+        let dots = document.querySelectorAll('.dot');
+        let slideIndex = 1;
+        let timeoutID;
+
+        const showSlides = (n) => {
+            let i;
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                dots[i].setAttribute('class', 'dot');
+            }
+
+
+            slides[slideIndex - 1].style.display = 'block';
+            dots[slideIndex - 1].setAttribute('class', 'dot ativo');
+            clearTimeout(timeoutID);
+            timeoutID = setTimeout(autoSlides, 4000);
+        };
+
+        const plusSlides = (n) => {
+            showSlides(slideIndex += n);
+        };
+
+        const currentSlide = (n) => {
+            showSlides(slideIndex = n);
+        };
+
+        function autoSlides() {
+            let i;
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                dots[i].setAttribute('class', 'dot');
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].setAttribute('class', 'dot ativo');
+            timeoutID = setTimeout(autoSlides, 4000);
+        }
+
+        autoSlides();
+
+        // Função para copiar voucher
+        

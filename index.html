@@ -1,89 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victor Cristiano - Consultor Arezzo</title>
+    <title>Cartão Victor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="styles.css">
-</head>
+<header class="header">
+    <img class="profile-img" src="https://i.ibb.co/x3zSrhb/perfil.jpg" alt="">
+    <h1 class="name">Victor Cristiano</h1>
+    <h3>Consultor de Vendas</h3>
+    <p>Segunda a Sexta 10:00h às 18:20</p>
+    <p>Domingos e Feriados 14:00h às 20:00h</p>
+    <p>Arezzo MidwayMall</p>
+</header>
 <body>
-    <div class="container">
-        <!-- Cabeçalho  -->
-        <header class="header">
-            <img src="perfil.jpeg" alt="Victor Cristiano" class="profile-image">
-            <h1 class="name">Victor Cristiano</h1>
-            <p class="title">Consultor Arezzo</p>
-            <p>Segunda a Sexta 10:00h às 18:20h</p>
-            <p>Domingo 14:00h às 20:00h</p>
-        </header>
-
-        <!-- Novidades (Carrossel) -->
-        <section class="novidades">
-            <h2>Novidades</h2>
-            <div class="carousel-container">
-                <div class="carousel" id="novidades-carousel">
-                    <img src="img1.jpeg" alt="Novidade 1">
-                    <img src="img2.jpeg" alt="Novidade 2">
-                    <img src="img3.jpeg" alt="Novidade 3">
-                    <img src="img4.jpeg" alt="Novidade 4">
-                </div>
-                <div class="carousel-nav">
-                    <button onclick="changeSlide(-1, 'novidades')"><i class="fas fa-chevron-left"></i></button>
-                    <button onclick="changeSlide(1, 'novidades')"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Redes Sociais -->
-        <section class="redes-sociais">
-            <h2>Redes Sociais</h2>
-            <a href="https://wa.me/+5584999038692" target="_blank" class="social-link">
-                <div class="social-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <span class="social-text">Me chame no WhatsApp</span>
-            </a>
-            <a href="https://www.instagram.com/victor_arezzo/" target="_blank" class="social-link">
-                <div class="social-btn instagram">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <span class="social-text">Me siga no Instagram</span>
-            </a>
-        </section>
-        
-        <p class="redes-alert">
-            Fique atento às minhas redes sociais para ficar por dentro das novidades!
-        </p>
-
-        <!-- Voucher -->
-        <section class="voucher">
-            <h2>Voucher do Site</h2>
-            <div class="voucher-code" id="voucher-text">ARZ511394</div>
-            <button class="copy-btn" onclick="copyVoucher()">Copiar Código</button>
-        </section>
-             <p class="redes-alert">
-               Esse voucher concede desconto para compras no site apenas para produtos da nova coleção. 
-               <a href="https://www.arezzo.com.br" target="_blank">Visite o site da Arezzo</a>
-            </p>
-        <!-- Depoimentos -->
-        <section class="depoimentos">
-            <h2>Depoimentos</h2>
-            <div class="carousel-container">
-                <div class="depoimento-carousel" id="depoimentos-carousel">
-                    <img src="/assets/img1.jpeg" alt="Novidade 1">
-                    <img src="/assets/img2.jpeg" alt="Novidade 2">
-                    <img src="/assets/img3.jpeg" alt="Novidade 3">
-                    <img src="/assets/img4.jpeg" alt="Novidade 4">
-                </div>
-                <div class="carousel-nav">
-                    <button onclick="changeSlide(-1, 'depoimentos')"><i class="fas fa-chevron-left"></i></button>
-                    <button onclick="changeSlide(1, 'depoimentos')"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
+    
+<div class="container">
+    <div class="slideshow-container">
+        <h2>Novidades</h2>
+        <div class="slideshow fade">
+            <img src="https://i.ibb.co/SdHDkdq/img4.jpg" alt="slide">
+        </div>
+        <div class="slideshow fade">
+            <img src="https://i.ibb.co/L98Rw9t/img3.jpg" alt="Slide">
+        </div>
+        <div class="slideshow fade">
+            <img src="https://i.ibb.co/ynqgkxX/img2.jpg" alt="Slide">
+        </div>
+        <div class="slideshow fade">
+            <img src="https://i.ibb.co/NngDxL0/img1.jpg" alt="Slide">
+        </div>
+        <div class="paginacao">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
     </div>
-    <script src="main.js"></script>
+    
+    <section class="redes-container">
+        <h2>Redes Sociais</h2>
+        <a href="https://wa.me/+5584999038692" target="_blank" class="social-link">
+            <div class="social-btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <span class="social-text">Me chame no WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/victor_arezzo/" target="_blank" class="social-link">
+            <div class="social-btn instagram">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <span class="social-text">Me siga no Instagram</span>
+        </a>
+        <a href="https://chat.whatsapp.com/KFtL0EmSm1lKR3olaU1dKO" target="_blank" class="social-link">
+            <div class="social-btn whatsapp">
+                <i class="fa-solid fa-comments-dollar"></i>
+            </div>
+            <span class="social-text">Entre no meu Grupo</span>
+        </a>
+    </section>
+    <section class="voucher">
+        <h2>Voucher do Site</h2>
+            <div class="voucher-code" id="voucher-text">ARZ511394</div>
+            <button class="copy-btn" onclick="copyVoucher()">Copiar Código</button><p class="redes-alert">
+        Esse voucher concede desconto para compras no site apenas para produtos da nova coleção. 
+        <a href="https://www.arezzo.com.br" target="_blank">Visite o site da Arezzo</a>
+     </p>
+    </section>
+    
+    <section class="depoimentos">
+        <h2>Depoimentos</h2>
+
+        <div class="depoimentos-container">
+            <div class="primeira-img">
+                <img src="https://i.ibb.co/jrztb4K/Whats-App-Image-2024-12-01-at-16-48-01.jpg" alt="img1">
+            </div>
+            <div class="segunda-img">
+                <img src="https://i.ibb.co/PWHPPrS/Whats-App-Image-2024-12-01-at-16-36-56.jpg" alt="img1">
+            </div>
+            <div class="terceira-img">
+                <img src="https://i.ibb.co/7pDrzcY/Whats-App-Image-2024-12-01-at-16-33-11.jpg" alt="img1">
+            </div>
+            <div class="quarta-img">
+                <img src="https://i.ibb.co/jrztb4K/Whats-App-Image-2024-12-01-at-16-48-01.jpg
+                https://i.ibb.co/PWHPPrS/Whats-App-Image-2024-12-01-at-16-36-56.jpg
+                https://i.ibb.co/7pDrzcY/Whats-App-Image-2024-12-01-at-16-33-11.jpg
+                https://i.ibb.co/417Qt1P/Whats-App-Image-2024-12-01-at-16-31-33.jpg" alt="img1">
+            </div>
+        </div>
+    </section>
+</div>
+<script src="main.js"></script>
 </body>
 </html>
